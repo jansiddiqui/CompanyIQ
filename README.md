@@ -1,5 +1,7 @@
 # CompanyIQ - Professional AI Investment Research Platform
 
+Developed by **Jan Mohammd**
+
 CompanyIQ is an enterprise-grade AI-powered investment research platform designed to automate deep equity research and justify every recommendation. Styled after modern minimal interfaces like Perplexity, Stripe, and Linear, it uses a mathematically locked scoring model and structured AI reasoning to provide trustworthy, explainable stock analysis.
 
 ---
@@ -178,4 +180,4 @@ After report generation, users can trigger stress-testing scenarios (e.g. rate h
 All balance sheets, multiples, and historical charts are loaded from raw API feeds into structured "Fact Cards". Qualitative summaries and Moat reviews are separated in distinct cards to defend analytical objectivity.
 
 ---
-*Disclaimer: CompanyIQ is a research demonstration project developed by Jan Mohammad and should not be used as professional financial advice.*
+*Disclaimer: CompanyIQ is a research demonstration project developed by Jan Mohammd and should not be used as professional financial advice.*

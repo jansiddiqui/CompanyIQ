@@ -836,7 +836,7 @@ ${getWhyNotList().map((pt: string) => `- ${pt}`).join("\n")}`;
 
       {/* Top action header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 print:hidden">
-        <Link href="/">
+        <Link href="/dashboard">
           <Button variant="ghost" size="sm" className="h-8 px-2.5 text-muted-foreground hover:text-foreground font-semibold text-xs">
             <ArrowLeft className="mr-1 h-3.5 w-3.5" /> Back to Dashboard
           </Button>
