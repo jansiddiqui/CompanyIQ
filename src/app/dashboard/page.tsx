@@ -87,7 +87,7 @@ export default async function DashboardPage() {
               <Link
                 key={href}
                 href={href}
-                className="group flex flex-col gap-3 p-3.5 sm:p-4 rounded-2xl border border-border/40 bg-card/40 hover:border-primary/30 hover:bg-primary/3 transition-all duration-200"
+                className="group flex flex-col gap-3 p-3.5 sm:p-4 rounded-2xl border border-border/40 bg-card/40 hover:border-primary/30 hover:bg-primary/3 active:scale-[0.98] active:translate-y-[0.5px] transition-all duration-150"
               >
                 <div className="h-8 w-8 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center shrink-0">
                   <Icon className="h-4 w-4 text-primary" />
@@ -125,7 +125,7 @@ export default async function DashboardPage() {
                   <Link
                     key={item.id}
                     href={`/research/${item.ticker}`}
-                    className="flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-muted/30 transition-all group min-w-0"
+                    className="flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-muted/30 active:scale-[0.99] active:translate-y-[0.2px] transition-all duration-150 group min-w-0"
                   >
                     <div className="flex items-center gap-3 min-w-0 flex-1 mr-2">
                       <Clock className="h-3.5 w-3.5 text-muted-foreground/40 shrink-0" />
@@ -164,7 +164,7 @@ export default async function DashboardPage() {
                   <Link
                     key={item.id}
                     href={`/research/${item.ticker}`}
-                    className="flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 rounded-2xl border border-border/30 bg-card/20 hover:border-primary/30 hover:bg-primary/3 transition-all group min-w-0"
+                    className="flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 rounded-2xl border border-border/30 bg-card/20 hover:border-primary/30 hover:bg-primary/3 active:scale-[0.98] active:translate-y-[0.5px] transition-all duration-150 group min-w-0"
                   >
                     <div className="flex items-center gap-3 min-w-0 flex-1 mr-2">
                       <Star className="h-3.5 w-3.5 text-primary shrink-0" />
@@ -200,7 +200,7 @@ export default async function DashboardPage() {
               <Link
                 key={ticker}
                 href={`/research/${ticker}`}
-                className="group flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 rounded-2xl border border-border/30 bg-card/20 hover:border-primary/30 hover:bg-primary/3 transition-all min-w-0"
+                className="group flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 rounded-2xl border border-border/30 bg-card/20 hover:border-primary/30 hover:bg-primary/3 active:scale-[0.98] active:translate-y-[0.5px] transition-all duration-150 min-w-0"
               >
                 <div className="min-w-0 flex-1 mr-2">
                   <p className="text-xs font-bold text-foreground group-hover:text-primary transition-colors">{ticker}</p>

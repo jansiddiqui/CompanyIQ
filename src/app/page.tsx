@@ -111,7 +111,7 @@ export default function LandingPage() {
             </Link>
             <Link
               href="/signup"
-              className="inline-flex items-center gap-1.5 h-9 px-4 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all shadow-sm shadow-primary/20"
+              className="inline-flex items-center gap-1.5 h-9 px-4 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 active:scale-[0.97] active:translate-y-[0.5px] transition-all duration-150 shadow-sm shadow-primary/20"
             >
               Start Research
               <ArrowRight className="h-3.5 w-3.5" />
@@ -147,14 +147,14 @@ export default function LandingPage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-center w-full max-w-md mx-auto sm:max-w-none">
               <Link
                 href="/signup"
-                className="flex w-full sm:w-auto items-center justify-center gap-2 h-12 px-7 rounded-2xl bg-primary text-primary-foreground text-sm font-bold hover:bg-primary/90 transition-all shadow-md shadow-primary/25"
+                className="flex w-full sm:w-auto items-center justify-center gap-2 h-12 px-7 rounded-2xl bg-primary text-primary-foreground text-sm font-bold hover:bg-primary/90 active:scale-[0.97] active:translate-y-[0.5px] transition-all duration-150 shadow-md shadow-primary/25"
               >
                 Start Research
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/login"
-                className="flex w-full sm:w-auto items-center justify-center gap-2 h-12 px-7 rounded-2xl border border-border/60 bg-card/40 text-sm font-semibold text-foreground hover:border-primary/30 hover:bg-primary/3 transition-all"
+                className="flex w-full sm:w-auto items-center justify-center gap-2 h-12 px-7 rounded-2xl border border-border/60 bg-card/40 text-sm font-semibold text-foreground hover:border-primary/30 hover:bg-primary/3 active:scale-[0.97] active:translate-y-[0.5px] transition-all duration-150"
               >
                 Sign in
                 <ChevronRight className="h-4 w-4 text-muted-foreground" />
@@ -228,7 +228,7 @@ export default function LandingPage() {
                   </p>
                   <Link
                     href="/signup"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:underline"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:underline active:scale-[0.97] active:translate-y-[0.5px] transition-all duration-150"
                   >
                     Run live research
                     <ArrowRight className="h-3.5 w-3.5" />
@@ -341,7 +341,7 @@ export default function LandingPage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-center w-full max-w-md mx-auto sm:max-w-none">
               <Link
                 href="/signup"
-                className="flex w-full sm:w-auto items-center justify-center gap-2 h-12 px-8 rounded-2xl bg-primary text-primary-foreground text-sm font-bold hover:bg-primary/90 transition-all shadow-md shadow-primary/25"
+                className="flex w-full sm:w-auto items-center justify-center gap-2 h-12 px-8 rounded-2xl bg-primary text-primary-foreground text-sm font-bold hover:bg-primary/90 active:scale-[0.97] active:translate-y-[0.5px] transition-all duration-150 shadow-md shadow-primary/25"
               >
                 Create Free Account
                 <ArrowRight className="h-4 w-4" />

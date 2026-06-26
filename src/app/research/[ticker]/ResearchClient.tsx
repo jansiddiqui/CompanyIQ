@@ -704,7 +704,7 @@ ${getWhyNotList().map((pt: string) => `- ${pt}`).join("\n")}`;
           <div className="w-full max-w-4xl bg-card border border-border rounded-3xl p-6 md:p-8 shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto font-sans">
             <button 
               onClick={() => setShowEngineeringMode(false)}
-              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground cursor-pointer"
+              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground cursor-pointer active:scale-90 transition-transform duration-100"
             >
               <X className="h-6 w-6" />
             </button>
@@ -1227,7 +1227,7 @@ ${getWhyNotList().map((pt: string) => `- ${pt}`).join("\n")}`;
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`flex items-center gap-2 px-4 py-3 text-xs font-bold transition-all relative shrink-0 -mb-px border-b-2 cursor-pointer ${
+                className={`flex items-center gap-2 px-4 py-3 text-xs font-bold transition-all relative shrink-0 -mb-px border-b-2 cursor-pointer active:scale-[0.98] active:translate-y-[0.2px] duration-150 ${
                   isActive 
                     ? "border-primary text-primary" 
                     : "border-transparent text-muted-foreground hover:text-foreground"
@@ -1532,7 +1532,7 @@ ${getWhyNotList().map((pt: string) => `- ${pt}`).join("\n")}`;
                           setCopiedIndex(i);
                           setTimeout(() => setCopiedIndex(null), 2000);
                         }}
-                        className="text-muted-foreground/60 hover:text-foreground transition-colors shrink-0 flex items-center gap-1 cursor-pointer"
+                        className="text-muted-foreground/60 hover:text-foreground transition-colors shrink-0 flex items-center gap-1 cursor-pointer active:scale-95 duration-100"
                         aria-label="Copy Response"
                       >
                         {copiedIndex === i ? (
@@ -1579,7 +1579,7 @@ ${getWhyNotList().map((pt: string) => `- ${pt}`).join("\n")}`;
                   key={`qa-${i}`}
                   onClick={() => handleChatSubmit(qa.cmd)}
                   disabled={chatLoading}
-                  className="whitespace-nowrap px-4 py-2 rounded-xl bg-primary/10 hover:bg-primary/20 text-[10px] text-primary border border-primary/20 cursor-pointer transition-colors shrink-0 h-9 flex items-center font-bold"
+                  className="whitespace-nowrap px-4 py-2 rounded-xl bg-primary/10 hover:bg-primary/20 text-[10px] text-primary border border-primary/20 cursor-pointer active:scale-[0.97] active:translate-y-[0.5px] transition-all duration-150 shrink-0 h-9 flex items-center font-bold"
                 >
                   {qa.label}
                 </button>
@@ -1591,7 +1591,7 @@ ${getWhyNotList().map((pt: string) => `- ${pt}`).join("\n")}`;
                   key={`q-${i}`}
                   onClick={() => handleChatSubmit(q)}
                   disabled={chatLoading}
-                  className="whitespace-nowrap px-4 py-2 rounded-xl bg-secondary/35 hover:bg-secondary/60 text-[10px] text-muted-foreground cursor-pointer transition-colors shrink-0 h-9 flex items-center font-bold border border-border/20"
+                  className="whitespace-nowrap px-4 py-2 rounded-xl bg-secondary/35 hover:bg-secondary/60 text-[10px] text-muted-foreground cursor-pointer active:scale-[0.97] active:translate-y-[0.5px] transition-all duration-150 shrink-0 h-9 flex items-center font-bold border border-border/20"
                 >
                   {q}
                 </button>

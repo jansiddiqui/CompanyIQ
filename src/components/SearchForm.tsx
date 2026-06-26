@@ -17,6 +17,7 @@ export function SearchForm() {
   const [loading, setLoading] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
   const [isOpen, setIsOpen] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
   
   const containerRef = useRef<HTMLDivElement>(null);
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -75,6 +76,7 @@ export function SearchForm() {
     const finalTicker = tickerValue.trim().toUpperCase();
     if (!finalTicker) return;
     setIsOpen(false);
+    setIsNavigating(true);
     router.push(`/research/${finalTicker}`);
   };
 
@@ -101,13 +103,14 @@ export function SearchForm() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
+          if (isNavigating) return;
           if (activeIndex >= 0 && activeIndex < suggestions.length) {
             handleSubmit(suggestions[activeIndex].ticker);
           } else {
             handleSubmit(query);
           }
         }}
-        className="relative w-full flex items-center bg-card border border-border/60 rounded-full px-5 py-3.5 focus-within:border-primary/50 focus-within:ring-4 focus-within:ring-primary/10 transition-all duration-300 shadow-xl shadow-black/10"
+        className={`relative w-full flex items-center bg-card border border-border/60 rounded-full px-5 py-3.5 focus-within:border-primary/50 focus-within:ring-4 focus-within:ring-primary/10 transition-all duration-300 shadow-xl shadow-black/10 ${isNavigating ? "opacity-60 pointer-events-none" : ""}`}
       >
         <Search className="h-5 w-5 text-muted-foreground/45 shrink-0" />
         <input
@@ -121,13 +124,14 @@ export function SearchForm() {
           onFocus={() => {
             if (suggestions.length > 0) setIsOpen(true);
           }}
+          disabled={isNavigating}
           autoFocus
           autoComplete="off"
           placeholder="Search any public company..."
           className="w-full pl-3 bg-transparent text-sm sm:text-base text-foreground placeholder:text-muted-foreground/45 focus:outline-none"
           aria-label="Search public companies by ticker or name"
         />
-        {loading && (
+        {(loading || isNavigating) && (
           <Loader2 className="h-4 w-4 text-muted-foreground/60 animate-spin shrink-0 ml-2" />
         )}
       </form>

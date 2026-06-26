@@ -81,7 +81,7 @@ export function Sidebar({ user }: Props) {
     <>
       <header className="sticky top-0 z-50 w-full border-b border-border/10 bg-background/60 backdrop-blur-md">
         <div className="max-w-6xl mx-auto h-16 px-4 sm:px-6 flex items-center justify-between">
-          <Link href={user ? "/dashboard" : "/"} className="flex items-center h-11" aria-label="CompanyIQ Home">
+          <Link href={user ? "/dashboard" : "/"} className="flex items-center h-11 active:scale-[0.97] active:translate-y-[0.5px] transition-all duration-150" aria-label="CompanyIQ Home">
             <div className="h-9 w-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 hover:bg-primary/20 transition-all duration-300 shadow-sm shadow-primary/5">
               <TrendingUp className="h-5 w-5 text-primary" />
             </div>
@@ -96,7 +96,7 @@ export function Sidebar({ user }: Props) {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "text-xs font-semibold transition-all duration-200 relative py-2.5 hover:text-foreground",
+                    "text-xs font-semibold transition-all duration-150 relative py-2.5 hover:text-foreground active:scale-[0.97] active:translate-y-[0.5px]",
                     isActive ? "text-foreground" : "text-muted-foreground/80"
                   )}
                 >
@@ -138,14 +138,14 @@ export function Sidebar({ user }: Props) {
               <div className="hidden md:flex items-center gap-2">
                 <Link
                   href="/login"
-                  className="h-9 px-3 text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5 rounded-xl"
+                  className="h-9 px-3 text-xs font-semibold text-muted-foreground hover:text-foreground transition-all flex items-center gap-1.5 rounded-xl active:scale-[0.97] active:translate-y-[0.5px] duration-150"
                 >
                   <LogIn className="h-3.5 w-3.5" />
                   Sign in
                 </Link>
                 <Link
                   href="/signup"
-                  className="h-9 px-4 text-xs font-semibold bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-all flex items-center gap-1.5 shadow-sm shadow-primary/20"
+                  className="h-9 px-4 text-xs font-semibold bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-all flex items-center gap-1.5 shadow-sm shadow-primary/20 active:scale-[0.97] active:translate-y-[0.5px] duration-150"
                 >
                   <UserPlus className="h-3.5 w-3.5" />
                   Sign up
@@ -208,7 +208,7 @@ export function Sidebar({ user }: Props) {
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
                 className={cn(
-                  "text-sm font-semibold transition-all duration-200 h-11 flex items-center px-4 rounded-xl focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none",
+                  "text-sm font-semibold transition-all duration-150 h-11 flex items-center px-4 rounded-xl focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none active:scale-[0.97] active:translate-y-[0.5px]",
                   isActive 
                     ? "bg-primary/10 text-primary font-bold shadow-sm shadow-primary/5" 
                     : "text-muted-foreground hover:bg-secondary/40 hover:text-foreground"
@@ -231,7 +231,7 @@ export function Sidebar({ user }: Props) {
               </div>
               <button
                 onClick={() => { setMobileOpen(false); handleSignOut(); }}
-                className="w-full h-11 flex items-center gap-3 px-4 rounded-xl text-sm font-semibold text-muted-foreground hover:bg-secondary/40 hover:text-foreground transition-all"
+                className="w-full h-11 flex items-center gap-3 px-4 rounded-xl text-sm font-semibold text-muted-foreground hover:bg-secondary/40 hover:text-foreground transition-all active:scale-[0.97] active:translate-y-[0.5px] duration-150"
               >
                 <LogOut className="h-4 w-4 text-muted-foreground/60" />
                 Sign out
@@ -242,7 +242,7 @@ export function Sidebar({ user }: Props) {
               <Link
                 href="/login"
                 onClick={() => setMobileOpen(false)}
-                className="w-full h-11 flex items-center gap-3 px-4 rounded-xl text-sm font-semibold text-muted-foreground hover:bg-secondary/40 hover:text-foreground transition-all"
+                className="w-full h-11 flex items-center gap-3 px-4 rounded-xl text-sm font-semibold text-muted-foreground hover:bg-secondary/40 hover:text-foreground transition-all active:scale-[0.97] active:translate-y-[0.5px] duration-150"
               >
                 <LogIn className="h-4 w-4 text-muted-foreground/60" />
                 Sign in
@@ -250,7 +250,7 @@ export function Sidebar({ user }: Props) {
               <Link
                 href="/signup"
                 onClick={() => setMobileOpen(false)}
-                className="w-full h-11 flex items-center justify-center gap-2 rounded-xl text-sm font-bold bg-primary text-primary-foreground hover:bg-primary/90 transition-all"
+                className="w-full h-11 flex items-center justify-center gap-2 rounded-xl text-sm font-bold bg-primary text-primary-foreground hover:bg-primary/90 transition-all active:scale-[0.97] active:translate-y-[0.5px] duration-150"
               >
                 <UserPlus className="h-4 w-4" />
                 Create account
