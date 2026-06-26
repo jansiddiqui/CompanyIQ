@@ -178,4 +178,4 @@ After report generation, users can trigger stress-testing scenarios (e.g. rate h
 All balance sheets, multiples, and historical charts are loaded from raw API feeds into structured "Fact Cards". Qualitative summaries and Moat reviews are separated in distinct cards to defend analytical objectivity.
 
 ---
-*Disclaimer: CompanyIQ is a research demonstration project developed by Altuni AI Labs and should not be used as professional financial advice.*
+*Disclaimer: CompanyIQ is a research demonstration project developed by Jan Mohammad and should not be used as professional financial advice.*
