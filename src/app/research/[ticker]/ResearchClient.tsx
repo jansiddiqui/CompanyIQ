@@ -36,7 +36,8 @@ import {
   Terminal,
   ShieldAlert,
   ListChecks,
-  GitCommit
+  GitCommit,
+  RefreshCw
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -851,6 +852,17 @@ ${getWhyNotList().map((pt: string) => `- ${pt}`).join("\n")}`;
             title="Open Interview Engineering Diagnostics Overlay"
           >
             <Settings className="h-3.5 w-3.5" />
+          </Button>
+
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={() => {
+              window.location.href = `/research/${ticker}?refresh=true`;
+            }}
+            className="h-8 px-2.5 border-border text-[11px] font-bold text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-150 active:scale-[0.97] active:translate-y-[0.5px]"
+          >
+            <RefreshCw className="mr-1 h-3.5 w-3.5" /> Re-run Analysis
           </Button>
 
           <Button 

@@ -4,14 +4,20 @@ import { History as HistoryIcon, ArrowUpRight, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { getCurrentUser } from "@/utils/auth";
+import { redirect } from "next/navigation";
 
 export const revalidate = 0; // Disable caching
 
 export default async function HistoryPage() {
+  const user = await getCurrentUser();
+  if (!user) redirect("/login");
+
   let recentSearches: any[] = [];
 
   try {
     recentSearches = await db.searchHistory.findMany({
+      where: { userId: user.id },
       orderBy: { createdAt: "desc" },
     });
   } catch (error) {

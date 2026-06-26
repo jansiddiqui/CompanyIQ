@@ -70,7 +70,7 @@ export async function GET(req: NextRequest) {
         let previousReportData = null;
         try {
           const previousReportEntry = await db.savedReport.findFirst({
-            where: { ticker: symbolClean },
+            where: { ticker: symbolClean, userId: user.id },
           });
           if (previousReportEntry && previousReportEntry.reportData) {
             previousReportData = JSON.parse(previousReportEntry.reportData);

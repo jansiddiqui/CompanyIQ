@@ -2,14 +2,20 @@ import { AppHeader } from "@/components/AppHeader";
 import { db } from "@/lib/db";
 import { Star } from "lucide-react";
 import { WatchlistList } from "./WatchlistList";
+import { getCurrentUser } from "@/utils/auth";
+import { redirect } from "next/navigation";
 
 export const revalidate = 0; // Disable server-side caching to always reflect modifications
 
 export default async function WatchlistPage() {
+  const user = await getCurrentUser();
+  if (!user) redirect("/login");
+
   let reports: any[] = [];
 
   try {
     reports = await db.savedReport.findMany({
+      where: { userId: user.id, isWatchlist: true },
       orderBy: { createdAt: "desc" },
     });
   } catch (error) {

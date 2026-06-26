@@ -1,6 +1,7 @@
 import { db } from "@/lib/db";
 import { AppHeader } from "@/components/AppHeader";
 import { ResearchClient } from "./ResearchClient";
+import { getCurrentUser } from "@/utils/auth";
 
 interface PageProps {
   params: Promise<{ ticker: string }>;
@@ -14,13 +15,14 @@ export default async function ResearchPage({ params, searchParams }: PageProps) 
   const resolvedSearchParams = await searchParams;
   const ticker = resolvedParams.ticker.toUpperCase();
   const refresh = resolvedSearchParams.refresh === "true";
+  const user = await getCurrentUser();
 
   let cachedReport = null;
 
-  if (!refresh) {
+  if (!refresh && user) {
     try {
       const saved = await db.savedReport.findFirst({
-        where: { ticker },
+        where: { ticker, userId: user.id },
       });
 
       if (saved) {
