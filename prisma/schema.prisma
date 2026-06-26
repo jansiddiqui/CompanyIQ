@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  engineType = "library"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String        @id @default(uuid())
+  email        String        @unique
+  name         String
+  passwordHash String
+  createdAt    DateTime      @default(now())
+  sessions     Session[]
+  history      SearchHistory[]
+  reports      SavedReport[]
+
+  @@index([email])
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([token])
+  @@index([userId])
+}
+
+model SearchHistory {
+  id        String   @id @default(uuid())
+  ticker    String
+  name      String
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([ticker])
+  @@index([createdAt])
+}
+
+model SavedReport {
+  id             String   @id @default(uuid())
+  ticker         String
+  name           String
+  score          Int
+  recommendation String
+  reportData     String   // Full JSON stringified report
+  userId         String?
+  user           User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  createdAt      DateTime @default(now())
+  isWatchlist    Boolean  @default(false)
+  lastMonitored  DateTime @default(now())
+
+  @@index([userId])
+  @@index([ticker])
+  @@index([createdAt])
+}
